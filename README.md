@@ -11,9 +11,11 @@ Uses
 ----
 
 Assuming you got a ssh and beep on your remote computer:
+
 `/set hilightcmd_systemcmd ssh user@host beep &`
 
 Or, with notify-send:
+
 `/set hilightcmd_systemcmd notify-send 'hilighted @irc'`
 
 
