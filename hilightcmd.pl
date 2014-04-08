@@ -16,7 +16,7 @@ $VERSION = "0.1";
 	  contact     => "contact\@ramnes.eu", 
 	  name        => "hilightcmd",
 	  description => "Call a system command when receiving a hilight",
-	  license     => "GNU GPL v3",
+	  license     => "GNU GPLv3",
 	  url         => "https://github.com/ramnes/hilightcmd");
 
 
