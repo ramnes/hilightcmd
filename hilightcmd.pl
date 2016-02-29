@@ -14,7 +14,7 @@ use Text::Sprintf::Named qw(named_sprintf);
 
 $VERSION = "0.1";
 %IRSSI = (authors     => "Guillaume Gelin",
-	  contact     => "contact\@ramnes.eu", 
+	  contact     => "contact\@ramnes.eu",
 	  name        => "hilightcmd",
 	  description => "Call a system command when receiving a hilight",
 	  license     => "GNU GPLv3",
