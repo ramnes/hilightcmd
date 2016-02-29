@@ -9,7 +9,8 @@
 
 use Irssi;
 use POSIX;
-use vars qw($VERSION %IRSSI); 
+use vars qw($VERSION %IRSSI);
+use Text::Sprintf::Named qw(named_sprintf);
 
 $VERSION = "0.1";
 %IRSSI = (authors     => "Guillaume Gelin",
@@ -31,8 +32,13 @@ Irssi::signal_add('print text' => sub {
     if (($dest->{level} & ($opt))
 	&& ($dest->{level} & MSGLEVEL_NOHILIGHT) == 0
 	&& (Irssi::active_win()->{refnum} != $dest->{window}->{refnum}
-	|| Irssi::settings_get_bool('hilightcmd_currentwin'))) {
-	system(Irssi::settings_get_str('hilightcmd_systemcmd'));
+            || Irssi::settings_get_bool('hilightcmd_currentwin'))) {
+
+        $stripped =~ s/"/\\"/g;
+        system(named_sprintf(
+            Irssi::settings_get_str('hilightcmd_systemcmd'),
+            message => $stripped
+        ));
     }
 });
 
