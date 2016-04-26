@@ -1,22 +1,24 @@
 hilightcmd
 ==========
 
-Call a system command when hilighted.
+Call a custom system command when receiving a hilight.
 
 Originally based on `hiligthwin.pl` by Timo Sirainen, and djcraven5's idea for
 making remote computer beep through ssh.
 
 
-Uses
-----
+Usage
+-----
 
-Assuming you got a ssh and beep on your remote computer:
+Example of use, assuming you have ssh and beep on your remote:
+```
+/set hilightcmd_systemcmd ssh user@host beep &
+```
 
-`/set hilightcmd_systemcmd ssh user@host beep &`
-
-Or, with notify-send:
-
-`/set hilightcmd_systemcmd notify-send 'hilighted @irc'`
+The hilighted text may be passed as a quoted string:
+```
+/set hilightcmd_systemcmd printf "%s\n" %(message)s >> ~/hilights
+```
 
 
 License
